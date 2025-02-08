@@ -1,0 +1,8 @@
+2024/11/11 14:28:10 Service started
+2024/11/11 14:28:10 Configuration successfully written to .env file.
+2024/11/11 14:42:13 Config has changed: USER_ADDRESS: 127.0.0.1
+USER_PORT: 9091
+
+NACOS_HOST: 192.168.88.130
+NACOS_PORT: 8848
+2024/11/11 14:42:13 Configuration successfully written to .env file.

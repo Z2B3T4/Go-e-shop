@@ -1,0 +1,33 @@
+package contance
+
+const (
+	// DB相关
+	SELECT_ERROR       = 10001
+	REDIS_DELETE_ERROR = 10002
+	UPDATE_ERROR       = 10003
+	DELETE_ERROR       = 10004
+	CREATE_ERROR       = 10005
+
+	// 登录相关
+	USER_NOT_FOUND             = 11001
+	TOKEN_GENERATE_ERROR       = 11002
+	LOGIN_EMAIL_PASSWORD_ERROR = 11003
+	TOKEN_VERIFY_ERROR         = 10004
+	LOGOUT_ERROR               = 10005
+
+	// 日常错误，类型错误
+	CONVERT_ERROR = 12001
+
+	// 用户相关
+	USER_CREATE_ERROR  = 13001
+	USER_ALREADY_EXIST = 13002
+
+	// 服务器错误
+	SERVER_ERROR = 20000
+
+	// 常见错误
+	PARAM_ERROR = 400
+	LIMIT_ERROR = 429
+
+	SUCCESS = 200
+)

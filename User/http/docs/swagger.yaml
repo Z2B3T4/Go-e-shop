@@ -1,0 +1,53 @@
+basePath: /
+host: localhost:8000
+info:
+  contact:
+    name: hertz-contrib
+    url: https://github.com/hertz-contrib
+  description: This is a demo using Hertz.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: HertzTest
+  version: 1.0.0
+paths:
+  /user/getById/{userId}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve user information by user ID
+      parameters:
+      - description: User ID
+        in: path
+        name: userId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+        "400":
+          description: Bad request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "404":
+          description: User not found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "429":
+          description: Rate limit reached
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get a user by ID
+      tags:
+      - User
+schemes:
+- http
+swagger: "2.0"

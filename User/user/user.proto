@@ -1,0 +1,124 @@
+syntax="proto3";
+
+package user;
+
+option go_package="/user";
+
+service UserService {
+  rpc Register(RegisterReq) returns (RegisterResp) {}
+  rpc Login(LoginReq) returns (LoginResp) {}
+  rpc getUserInfo(UserInfoReq) returns (UserInfoResp){}
+  rpc CreateUser(CreateUserReq) returns (CreateUserResp){}
+  rpc DeleteUser(DeleteUserReq) returns (DeleteUserResp){}
+  rpc LogOut(LogOutReq) returns (LogOutResp){}
+  rpc UpdateUser(UpdateUserReq) returns (UpdateUserResp){}
+}
+
+message RegisterReq {
+  int32 UserID = 1;
+  string Name = 2;
+  optional int32 Age = 3;
+  int32 Gender = 4;
+  string PhoneNumber = 5;
+  optional string Email = 6;
+  optional string Address = 7;
+  optional string brithday = 9;
+  string CreateAt = 10;
+  string UpdatedAt = 11;
+  optional string Password = 12;
+}
+
+message RegisterResp {
+  int32 user_id = 1;
+  string token = 2;
+}
+
+message LoginReq {
+  string email= 1;
+  string password = 2;
+}
+
+message LoginResp {
+  int32 user_id = 1;
+  string token = 2;
+}
+
+message UserInfoReq {
+  int32 UserID = 1;
+
+
+}
+message UserInfoResp {
+  int32 UserID = 1;
+  string Name = 2;
+  optional int32 Age = 3;
+  int32 Gender = 4;
+  string PhoneNumber = 5;
+  optional string Email = 6;
+  optional string Address = 7;
+  optional string brithday = 9;
+  string CreateAt = 10;
+  string UpdatedAt = 11;
+  optional string Password = 12;
+}
+
+message CreateUserReq {
+  string Name = 2;
+  optional int32 Age = 3;
+  int32 Gender = 4;
+  string PhoneNumber = 5;
+  optional string Email = 6;
+  optional string Address = 7;
+  optional string brithday = 9;
+  string CreateAt = 10;
+  string UpdatedAt = 11;
+  string Password = 12;
+}
+message CreateUserResp {
+  bool ok = 1;
+}
+
+message DeleteUserReq{
+  int32 UserID = 1;
+}
+message DeleteUserResp{
+  bool ok = 1;
+}
+message updateUserReq{
+  int32 UserID = 1;
+  string Name = 2;
+  optional int32 Age = 3;
+  int32 Gender = 4;
+  string PhoneNumber = 5;
+  optional string Email = 6;
+  optional string Address = 7;
+  optional string brithday = 9;
+  string CreateAt = 10;
+  string UpdatedAt = 11;
+  optional string Password = 12;
+}
+message updateUserResp{
+  bool ok = 1;
+}
+message LogOutReq{
+  int32 UserId = 1;
+}
+message LogOutResp{
+  bool ok = 1;
+}
+message UpdateUserReq{
+  int32 UserID = 1;
+  string Name = 2;
+  optional int32 Age = 3;
+  int32 Gender = 4;
+  string PhoneNumber = 5;
+  optional string Email = 6;
+  optional string Address = 7;
+  optional string brithday = 9;
+  string CreateAt = 10;
+  string UpdatedAt = 11;
+  optional string Password = 12;
+}
+message UpdateUserResp{
+  bool ok = 1;
+}
